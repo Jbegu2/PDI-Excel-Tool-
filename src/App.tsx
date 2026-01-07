@@ -1,4 +1,3 @@
-import React from 'react';
 import { useInspectionWizard } from './hooks/useInspectionWizard';
 import { ExcelParseResult } from './types/inspection';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -17,8 +16,6 @@ function App() {
     data,
     goToStep,
     setHeaderInfo,
-    setItems,
-    setWorkbook,
     initializeData,
     setCurrentItemIndex,
     markItemPass,

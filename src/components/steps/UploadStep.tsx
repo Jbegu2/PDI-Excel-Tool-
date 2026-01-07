@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { parseExcelFile } from '../../utils/excelParser';
 import { ExcelParseResult } from '../../types/inspection';
 import '../../styles/components.css';

@@ -32,11 +32,6 @@ export async function parseExcelFile(file: File): Promise<ExcelParseResult> {
     });
   }
   
-  // Check workbook-level media
-  if (workbook.media && workbook.media.length > 0) {
-    console.log('Media items in workbook:', workbook.media.length);
-  }
-  
   // Debug: Check if formatting is preserved
   const sampleCell = worksheet.getCell('B3');
   if (sampleCell) {

@@ -24,7 +24,6 @@ export function InspectionStep({
   const currentItem = items[currentIndex];
   const progress = ((currentIndex + 1) / items.length) * 100;
   const isFirst = currentIndex === 0;
-  const isLast = currentIndex === items.length - 1;
 
   if (!currentItem) {
     return null;

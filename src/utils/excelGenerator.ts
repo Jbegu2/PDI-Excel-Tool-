@@ -36,11 +36,6 @@ export async function generateExcelFile(data: InspectionData): Promise<void> {
     console.warn('⚠️ No images found in worksheet - logo may be missing');
   }
   
-  // Check workbook-level media
-  if (workbook.media && workbook.media.length > 0) {
-    console.log('Media items in workbook:', workbook.media.length);
-  }
-  
   // Update header fields in their specific cells
   // Only update the VALUE, not the formatting
   data.headerInfo.fields.forEach(field => {
