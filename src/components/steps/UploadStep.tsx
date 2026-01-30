@@ -90,8 +90,8 @@ export function UploadStep({ onFileParsed }: UploadStepProps) {
 
       {hasSavedData && (
         <div style={{
-          background: 'rgba(226, 0, 26, 0.1)',
-          border: '1px solid var(--abb-red)',
+          background: 'rgba(255, 0, 0, 0.1)',
+          border: '1px solid var(--color-primary)',
           padding: 'var(--spacing-md)',
           borderRadius: 'var(--radius-md)',
           marginBottom: 'var(--spacing-lg)',

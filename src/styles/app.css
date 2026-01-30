@@ -8,9 +8,10 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--background);
-  color: var(--text-primary);
-  line-height: 1.6;
+  font-size: var(--font-size-base);
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,69 +22,86 @@ body {
   flex-direction: column;
 }
 
-/* Apple-style button */
+/* JBB-style button base */
 .btn {
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-md);
   font-weight: 500;
-  padding: var(--spacing-md) var(--spacing-xl);
-  border: none;
-  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-base);
-  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-fast), opacity var(--transition-fast), transform 0.1s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  min-height: 44px; /* Apple's minimum touch target */
+  min-height: 44px;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  opacity: 0.9;
 }
 
 .btn:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  transform: scale(0.98);
 }
 
+/* Primary button - JBB red */
 .btn-primary {
-  background: var(--abb-red);
-  color: var(--abb-white);
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: #C50017;
+  background: #e60000;
 }
 
+/* Success button - JBB green */
 .btn-success {
-  background: var(--success-green);
-  color: var(--abb-white);
+  background: var(--color-success);
+  color: #ffffff;
+  border-color: var(--color-success);
+  font-weight: 600;
 }
 
 .btn-success:hover {
-  background: #2DB04A;
+  background: #15803d;
 }
 
+/* Danger button - JBB style (light background) */
 .btn-danger {
-  background: var(--error-red);
-  color: var(--abb-white);
+  background: #fef2f2;
+  color: var(--color-danger);
+  border-color: #fecaca;
 }
 
 .btn-danger:hover {
-  background: #C50017;
+  background: #fee2e2;
 }
 
+/* Secondary button - JBB style */
 .btn-secondary {
-  background: var(--card-background);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background: var(--color-bg-page);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
 }
 
 .btn-secondary:hover {
-  background: var(--abb-graphite);
+  background: var(--color-border-light);
+}
+
+/* Ghost button */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--color-border-light);
 }
 
 .btn:disabled {
@@ -92,58 +110,59 @@ body {
   transform: none;
 }
 
-/* Apple-style card */
+/* JBB-style card */
 .card {
-  background: var(--card-background);
-  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   margin-bottom: var(--spacing-lg);
 }
 
-/* Apple-style input */
+/* JBB-style input */
 .input {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  padding: var(--spacing-md);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--card-background);
-  color: var(--text-primary);
-  transition: all var(--transition-base);
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   width: 100%;
   min-height: 44px;
 }
 
 .input:focus {
-  outline: none;
-  border-color: var(--abb-red);
-  box-shadow: 0 0 0 3px rgba(226, 0, 26, 0.1);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-focus);
 }
 
 .input::placeholder {
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
 }
 
-/* Apple-style textarea */
+/* JBB-style textarea */
 .textarea {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  padding: var(--spacing-md);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--card-background);
-  color: var(--text-primary);
-  transition: all var(--transition-base);
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   width: 100%;
   min-height: 120px;
   resize: vertical;
 }
 
 .textarea:focus {
-  outline: none;
-  border-color: var(--abb-red);
-  box-shadow: 0 0 0 3px rgba(226, 0, 26, 0.1);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-focus);
 }
 
 /* Container */
@@ -154,11 +173,11 @@ body {
   width: 100%;
 }
 
-/* Progress indicator */
+/* Progress indicator - JBB red */
 .progress-bar {
   width: 100%;
   height: 4px;
-  background: var(--border-color);
+  background: var(--color-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
   margin-bottom: var(--spacing-lg);
@@ -166,8 +185,18 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: var(--abb-red);
+  background: var(--color-primary);
   transition: width var(--transition-base);
+}
+
+/* Section title - JBB style */
+.section-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 /* Utility classes */
@@ -176,13 +205,17 @@ body {
 }
 
 .text-large {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 600;
 }
 
 .text-xl {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 500;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
 }
 
 .mt-sm {
@@ -233,6 +266,10 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .gap-sm {
   gap: var(--spacing-sm);
 }
@@ -243,4 +280,12 @@ body {
 
 .gap-lg {
   gap: var(--spacing-lg);
+}
+
+/* Focus ring for accessibility */
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }

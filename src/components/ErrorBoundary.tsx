@@ -48,11 +48,12 @@ export class ErrorBoundary extends Component<Props, State> {
                 Error Details
               </summary>
               <pre style={{
-                background: 'var(--abb-graphite)',
+                background: 'var(--color-bg-page)',
                 padding: 'var(--spacing-md)',
                 borderRadius: 'var(--radius-md)',
                 overflow: 'auto',
-                fontSize: 'var(--font-size-sm)'
+                fontSize: 'var(--font-size-sm)',
+                border: '1px solid var(--color-border)'
               }}>
                 {this.state.error?.stack}
               </pre>

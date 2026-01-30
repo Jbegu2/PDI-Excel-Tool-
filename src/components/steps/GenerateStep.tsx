@@ -47,11 +47,12 @@ export function GenerateStep({ data, onComplete }: GenerateStepProps) {
             The file has been saved with the proper naming format based on your header information.
           </p>
           <div style={{ 
-            background: 'var(--abb-graphite)', 
+            background: 'var(--color-bg-page)', 
             padding: 'var(--spacing-md)', 
             borderRadius: 'var(--radius-md)',
             marginBottom: 'var(--spacing-xl)',
-            fontSize: 'var(--font-size-sm)'
+            fontSize: 'var(--font-size-sm)',
+            border: '1px solid var(--color-border)'
           }}>
             <strong>Filename:</strong> {data.headerInfo.robotModel || 'Unknown'} PDI - {data.headerInfo.serialNumber || 'Unknown'} - {data.bonusQuestionAnswer === 'pass' ? 'Pass' : 'Fail'}.xlsx
           </div>
